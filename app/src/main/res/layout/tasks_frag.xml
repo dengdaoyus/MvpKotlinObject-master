@@ -82,5 +82,5 @@
 
         </LinearLayout>
     </RelativeLayout>
-</com.ddy.android.architecture.blueprints.todoapp.tasks.ScrollChildSwipeRefreshLayout>
+</com.example.tasks.ScrollChildSwipeRefreshLayout>
 
