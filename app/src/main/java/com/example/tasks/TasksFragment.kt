@@ -128,6 +128,14 @@ class TasksFragment : Fragment(), TasksContract.View {
 
         return root
     }
+    private fun  showSnackBar(){
+        val view = LayoutInflater.from(activity).inflate(R.layout.snackbar_issue_adv,null)
+        Snackbar.make(view, "我是提示",  Snackbar.LENGTH_LONG)
+               // .setAction(action_text, click_listener)
+                .show()
+
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -135,6 +143,7 @@ class TasksFragment : Fragment(), TasksContract.View {
             R.id.menu_filter -> showFilteringPopUpMenu()
             R.id.menu_refresh -> presenter.loadTasks(true)
         }
+        showSnackBar()
         return true
     }
 

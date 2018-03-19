@@ -25,6 +25,9 @@ import com.example.data.Task
 
 /**
  * The Room Database that contains the Task table.
+ * @Database 该注解可以将继承RoomDatabase类的抽象类作Database标记
+ * entities属性,需要生成dao的表,
+ *  version属性, 指定生成的数据库版本.
  */
 @Database(entities = arrayOf(Task::class), version = 1)
 abstract class ToDoDatabase : RoomDatabase() {

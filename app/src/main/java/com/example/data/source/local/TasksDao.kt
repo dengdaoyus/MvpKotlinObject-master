@@ -24,7 +24,7 @@ import android.arch.persistence.room.Update
 import com.example.data.Task
 
 /**
- * Data Access Object for the tasks table.
+ * Data Access Object for the tasks table. 主要是负责各种查询的方法
  */
 @Dao interface TasksDao {
 

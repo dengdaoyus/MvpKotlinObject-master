@@ -26,6 +26,12 @@ import java.util.UUID
  * @param title       title of the task
  * @param description description of the task
  * @param id          id of the task
+ *
+ * @Entity(tableName = "tasks") (tableName = "tasks") 为表名重命名，默认为类名 Task
+ * @ColumnInfo(name = "title")  为列名重命名，默认为字段名title
+ * @PrimaryKey 主键
+ * @Ignore 忽略要存入表中的成员变量
+ * @Embedded 嵌套一个其他的类，作用是拥有该类的字段，并存入表中， 中嵌套了多个Country类,需要通过设置属性prefix为不同的值
  */
 @Entity(tableName = "tasks")
 data class Task @JvmOverloads constructor(
