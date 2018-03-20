@@ -11,9 +11,9 @@ import javax.inject.Inject
  *
  * Created by Administrator on 2018/3/20 0020.
  */
-class DaggerTestPresenter @Inject internal constructor(val mView: DaggerTestView) {
-    val TAG: String = "DaggerTestPresenter"
-    var syncRunnable: Runnable? = null
+class DaggerTestPresenter @Inject internal constructor(private val mView: DaggerTestView) {
+    private val TAG: String = "DaggerTestPresenter"
+    private var syncRunnable: Runnable? = null
     private val executorService: ExecutorService=Executors.newCachedThreadPool()
 
     fun loadData() {
