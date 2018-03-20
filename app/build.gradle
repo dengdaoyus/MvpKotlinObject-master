@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -66,6 +64,10 @@ android {
  Dependency versions are defined in the top level build.gradle file. This helps keeping track of
  all versions in a single place. This improves readability and helps managing project complexity.
  */
+kapt {
+    generateStubs = true
+}
+
 dependencies {
     // App's dependencies, including test
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
@@ -104,6 +106,10 @@ dependencies {
     androidTestCompile "com.android.support:design:$rootProject.supportLibraryVersion"
     androidTestCompile "com.android.support.test.espresso.idling:idling-concurrent:$rootProject.espressoVersion"
     androidTestCompile "android.arch.persistence.room:testing:$rootProject.roomVersion"
-    compile "com.google.code.findbugs:jsr305:2.0.1"
+    compile "com.google.code.findbugs:jsr305:3.0.1"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+
+    compile "com.google.dagger:dagger:2.11"
+    kapt 'com.google.dagger:dagger-compiler:2.10'
+
 }
