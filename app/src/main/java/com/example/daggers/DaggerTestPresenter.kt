@@ -1,8 +1,10 @@
 package com.example.daggers
 
 import android.util.Log
-import com.example.util.executorpack.ExecutorService
+import java.util.concurrent.ExecutorService
+
 import java.util.concurrent.Executors
+
 import javax.inject.Inject
 
 /**
@@ -12,7 +14,8 @@ import javax.inject.Inject
 class DaggerTestPresenter @Inject internal constructor(val mView: DaggerTestView) {
     val TAG: String = "DaggerTestPresenter"
     var syncRunnable: Runnable? = null
-    val executorService = Executors.newCachedThreadPool() as ExecutorService
+    private val executorService: ExecutorService=Executors.newCachedThreadPool()
+
     fun loadData() {
         executor()
     }
@@ -22,7 +25,7 @@ class DaggerTestPresenter @Inject internal constructor(val mView: DaggerTestView
         executorService.shutdown()
     }
 
-     fun executor() {
+     private fun executor() {
         if (syncRunnable == null) {
             syncRunnable = Runnable {
                 Log.e(TAG, Thread.currentThread().name)
