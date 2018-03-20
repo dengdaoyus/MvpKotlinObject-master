@@ -10,11 +10,9 @@ import dagger.Provides
  */
 
 @Module
-class DaggerTestModule(private var mView: DaggerTestView) {
+class DaggerTestModule internal constructor(private val mView: DaggerTestView) {
 
     @Provides
-    fun provideMainView(): DaggerTestView {
-        return mView
-    }
+    fun provideMainView(): DaggerTestView =mView
 
 }

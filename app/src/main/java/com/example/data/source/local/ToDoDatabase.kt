@@ -29,7 +29,7 @@ import com.example.data.Task
  * entities属性,需要生成dao的表,
  *  version属性, 指定生成的数据库版本.
  */
-@Database(entities = arrayOf(Task::class), version = 1)
+@Database(entities = arrayOf(Task::class), version = 1, exportSchema = false)
 abstract class ToDoDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TasksDao
