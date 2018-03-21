@@ -26,7 +26,6 @@ class DaggerTestActivity : AppCompatActivity(), DaggerTestView {
         setContentView(R.layout.dagger_act)
 
         DaggerTestComponent.builder().daggerTestModule(DaggerTestModule(this)).build().inject(this)
-
         mainPresenter.loadData()
 
     }
